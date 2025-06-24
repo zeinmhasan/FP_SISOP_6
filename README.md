@@ -138,7 +138,8 @@ pthread_mutex_unlock(&mutex_pembelian);  // Buka kunci
 ```
 
 **Video Menjalankan Program**
-...
+
+https://github.com/user-attachments/assets/a8c0502e-c86e-46de-9bf1-023989d38516
 
 ## Daftar Pustaka
 
