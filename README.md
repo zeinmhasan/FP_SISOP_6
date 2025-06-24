@@ -66,7 +66,7 @@ bin/        -> File binary hasil kompilasi
 
 **Thread**
 
-Soal yang Terkait Thread <br>
+Soal yang Terkait Thread : <br>
 Setiap pembeli diwakili oleh sebuah thread, dan memiliki ID unik (contoh: Pembeli 1, Pembeli 2, dst).
 
 **Teori**
@@ -92,7 +92,7 @@ for (int i = 0; i < jumlah_pembeli; i++) {
 
 **Mutual Exclusion**
 
-Soal yang Terkait Mutual Exclusion <br>
+Soal yang Terkait Mutual Exclusion : <br>
 Gunakan mutex untuk menjamin tidak terjadi race condition. Artinya, jika Pembeli 1 duluan, maka dia akan membeli 5 kali terlebih dahulu, lalu pembeli berikutnya.
 
 
