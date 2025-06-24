@@ -71,7 +71,16 @@ Setiap pembeli diwakili oleh sebuah thread, dan memiliki ID unik (contoh: Pembel
 
 **Teori**
 
-Thread adalah unit terkecil dalam eksekusi suatu proses yang memungkinkan beberapa instruksi dijalankan secara paralel. Thread digunakan untuk memecah pekerjaan menjadi bagian-bagian kecil yang bisa berjalan secara bersamaan untuk meningkatkan efisiensi.
+Thread atau utas merupakan unit terkecil dalam eksekusi proses dalam sistem operasi modern. Thread memungkinkan sebuah proses untuk terbagi menjadi beberapa jalur eksekusi independen yang dapat berjalan secara paralel, baik dalam satu inti prosesor (single core) maupun beberapa inti prosesor (multi-core). Penggunaan thread sangat penting dalam pengembangan aplikasi yang membutuhkan efisiensi dan responsivitas tinggi, seperti server jaringan, sistem real-time, dan komputasi paralel.
+<br>
+<br>
+Lee dan Hurson (1994) menjelaskan bahwa dalam konteks multithreading, "a thread is a sequence of statically ordered instructions where once the first instruction is executed, the remaining instructions execute without interruption" (p. 34). Artinya, thread adalah aliran instruksi yang dieksekusi secara berurutan dan memiliki jalur logika tersendiri dalam pelaksanaan suatu proses.
+<br>
+<br>
+Salah satu keunggulan thread adalah kemampuannya untuk berbagi memori dan sumber daya dengan thread lain dalam proses yang sama, sehingga komunikasi antarthread menjadi lebih cepat dibandingkan komunikasi antarproses (inter-process communication). Namun, karena thread berjalan secara bersamaan dan berbagi sumber daya yang sama, maka perlu diterapkan teknik sinkronisasi seperti mutex (mutual exclusion) agar tidak terjadi konflik (race condition).
+<br>
+<br>
+Dalam lingkungan komputasi modern, multithreading telah menjadi pendekatan umum dalam pengembangan perangkat lunak, baik dalam sistem operasi, aplikasi desktop, maupun layanan cloud. Selain meningkatkan performa, penggunaan thread juga mempermudah pemrosesan tugas-tugas secara simultan (concurrent), seperti menangani banyak permintaan pengguna pada aplikasi server.
 
 **Solusi**
 
@@ -133,5 +142,6 @@ pthread_mutex_unlock(&mutex_pembelian);  // Buka kunci
 
 ## Daftar Pustaka
 
+<li>Lee, B. and Hurson, A.R., 1994. Dataflow architectures and multithreading. Computer, 27(8), pp.27–38. Available at: https://doi.org/10.1109/2.303784 [Accessed 23 Jun. 2025].</li>
 <li>Lamport, L., 1986. The mutual exclusion problem: Part I – A theory of interprocess communication. Journal of the ACM, 33(2), pp.313–326. Available at: https://doi.org/10.1145/5383.5384 [Accessed 23 Jun. 2025]. </li>
 <li>Suzuki, I. and Kasami, T., 1985. A distributed mutual exclusion algorithm. ACM Transactions on Computer Systems, 3(4), pp.344–349. Available at: https://doi.org/10.1145/6110.214406 [Accessed 23 Jun. 2025]. </li>
