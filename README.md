@@ -21,20 +21,45 @@ zein muhammad hasan | 5027241035
 ... | 5027241xxx
 ... | 5027241xxx
 
-## Deskripsi Soal
+## Deskripsi Soal : MUTEX/THREAD Dragon Plush™ Sale
 
-> Insert testcase... (contoh dibawah) // hapus line ini
+Sebuah toko mainan sedang mengadakan diskon besar-besaran untuk boneka Dragon Plush™. Dalam program ini, kamu diminta untuk membuat simulasi penjualan Dragon Plush™ menggunakan konsep Thread dan Mutex (Mutual Exclusion).
 
-Memahami race condition pada operasi check-then-act. Program membuat 2 thread; tiap thread mencoba mengambil satu-satunya sumber daya yang tersedia dari variabel global stok (nilai awal 1). Jika tanpa mutex, kedua thread bisa lolos pengecekan dan sama-sama mengambil sumber daya, menghasilkan nilai akhir stok menjadi -1.
+### Aturan Simulasi:
 
-### Catatan
+<ul>
+  <li>Program akan menerima dua input dari user:
+    <ul>
+      <li>Jumlah pembeli (misal: 3)</li>
+      <li>Jumlah Dragon Plush™ yang tersedia (misal: 15)</li>
+    </ul>
+  </li>
+  <li>Setiap pembeli akan membeli 5 Dragon Plush™, dan pembeli dianggap "rakus".</li>
+  <li>Setiap pembeli diwakili oleh sebuah thread, dan memiliki ID unik (contoh: Pembeli 1, Pembeli 2, dst).</li>
+  <li>Gunakan <strong>mutex</strong> untuk menjamin tidak terjadi race condition.</li>
+  <li>Ketika satu pembeli sedang membeli, pembeli lainnya harus menunggu giliran (satu pembeli membeli 5 item sekaligus sebelum pembeli berikutnya).</li>
+  <li>Setiap kali terjadi pembelian, tampilkan pesan seperti:</li>
 
-> Insert catatan dari pengerjaan kalian... (contoh dibawah) // hapus line ini
-
-Struktur repository:
+  ```
+Pembeli 1 membeli Dragon Plush™ ke-1
+Pembeli 1 membeli Dragon Plush™ ke-2
+...
+Pembeli 1 membeli Dragon Plush™ ke-5
 ```
-.
-..
+
+<li>Jika ada pembeli yang ingin membeli tetapi stok sudah habis, tampilkan:</li>
+
+```
+Pembeli 3: Dragon Plush™ habis
+```
+
+</ul>
+
+
+Struktur Direktori:
+```
+src/        -> Source code utama
+bin/        -> File binary hasil kompilasi
 ```
 
 ## Pengerjaan
