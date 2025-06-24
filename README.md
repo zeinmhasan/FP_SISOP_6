@@ -99,7 +99,16 @@ Gunakan mutex untuk menjamin tidak terjadi race condition. Artinya, jika Pembeli
 
 **Teori**
 
-Mutual exclusion (mutex) adalah teknik penguncian yang digunakan untuk mencegah lebih dari satu thread mengakses bagian kritis dari kode (critical section) secara bersamaan, sehingga mencegah kondisi tidak konsisten (race condition).
+Mutual exclusion (eksklusi mutual) adalah salah satu konsep paling mendasar dalam sinkronisasi proses pada sistem komputasi paralel dan terdistribusi. Konsep ini mengatur agar hanya satu proses yang dapat memasuki critical section (bagian kritis dari kode yang mengakses sumber daya bersama) pada satu waktu, sehingga menghindari konflik akses atau kondisi tidak konsisten terhadap sumber daya bersama.
+<br>
+<br>
+Menurut Lamport (1986), masalah mutual exclusion pertama kali dijelaskan dan diselesaikan oleh Dijkstra. Dalam perumusan awalnya, "there is a collection of asynchronous processes, each alternately executing a critical and a noncritical section, that must be synchronized so that no two processes ever execute their critical sections concurrently" (Lamport, 1986, p. 313). Hal ini menunjukkan bahwa eksklusi mutual merupakan fondasi utama dari hampir seluruh mekanisme sinkronisasi proses dalam lingkungan paralel. Bahkan, Lamport menegaskan bahwa hampir semua model formal pemrosesan paralel dan mekanisme komunikasi antarproses secara implisit membutuhkan eksklusi mutual dalam implementasinya.
+<br>
+<br>
+Pada sistem terdistribusi, tantangan eksklusi mutual menjadi lebih kompleks karena tidak adanya memori bersama antar node, dan komunikasi hanya dapat dilakukan melalui pertukaran pesan. Suzuki dan Kasami (1985) menyatakan bahwa, "the problem is to design a distributed algorithm that realizes a mutual exclusion requirement that, at any moment, at most one node may stay in its critical section" (Suzuki & Kasami, 1985, p. 344). Ini menekankan pentingnya rancangan algoritma eksklusi mutual yang dapat menjamin tidak adanya dua node yang berada dalam critical section pada saat bersamaan, meskipun keterbatasan komunikasi dan tidak adanya penyimpanan bersama.
+<br>
+<br>
+Beberapa metode telah dikembangkan untuk mengimplementasikan mutual exclusion, baik menggunakan pendekatan terpusat (centralized), berbasis token (token ring atau privilege transfer seperti pada algoritma Suzuki–Kasami), maupun pendekatan berbasis voting atau quorum. Semua pendekatan ini memiliki satu tujuan yang sama, yaitu menjamin bahwa hanya satu proses yang dapat mengakses sumber daya kritis pada waktu tertentu, serta mencegah kondisi deadlock, starvation, dan race condition.
 
 **Solusi**
 
@@ -124,6 +133,5 @@ pthread_mutex_unlock(&mutex_pembelian);  // Buka kunci
 
 ## Daftar Pustaka
 
-Sitasi 1
-Sitasi 2
-Sitasi 3
+<li>Lamport, L., 1986. The mutual exclusion problem: Part I – A theory of interprocess communication. Journal of the ACM, 33(2), pp.313–326. Available at: https://doi.org/10.1145/5383.5384 [Accessed 23 Jun. 2025]. </li>
+<li>Suzuki, I. and Kasami, T., 1985. A distributed mutual exclusion algorithm. ACM Transactions on Computer Systems, 3(4), pp.344–349. Available at: https://doi.org/10.1145/6110.214406 [Accessed 23 Jun. 2025]. </li>
