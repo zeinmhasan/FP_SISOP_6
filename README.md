@@ -64,25 +64,60 @@ bin/        -> File binary hasil kompilasi
 
 ## Pengerjaan
 
-> Insert poin soal...
+**Thread**
+
+Soal yang Terkait Thread <br>
+Setiap pembeli diwakili oleh sebuah thread, dan memiliki ID unik (contoh: Pembeli 1, Pembeli 2, dst).
 
 **Teori**
 
-...
+Thread adalah unit terkecil dalam eksekusi suatu proses yang memungkinkan beberapa instruksi dijalankan secara paralel. Thread digunakan untuk memecah pekerjaan menjadi bagian-bagian kecil yang bisa berjalan secara bersamaan untuk meningkatkan efisiensi.
 
 **Solusi**
 
-...
+```c
+pthread_t threads[jumlah_pembeli];
 
-> Insert poin soal...
+for (int i = 0; i < jumlah_pembeli; i++) {
+    int* id_pembeli = malloc(sizeof(int));
+    *id_pembeli = i + 1;
+    pthread_create(&threads[i], NULL, &proses_pembelian, id_pembeli);
+}
+
+for (int i = 0; i < jumlah_pembeli; i++) {
+    pthread_join(threads[i], NULL);
+}
+
+```
+
+**Mutual Exclusion**
+
+Soal yang Terkait Mutual Exclusion <br>
+Gunakan mutex untuk menjamin tidak terjadi race condition. Artinya, jika Pembeli 1 duluan, maka dia akan membeli 5 kali terlebih dahulu, lalu pembeli berikutnya.
+
+
 
 **Teori**
 
-...
+Mutual exclusion (mutex) adalah teknik penguncian yang digunakan untuk mencegah lebih dari satu thread mengakses bagian kritis dari kode (critical section) secara bersamaan, sehingga mencegah kondisi tidak konsisten (race condition).
 
 **Solusi**
 
-...
+```c
+pthread_mutex_t mutex_pembelian;
+pthread_mutex_init(&mutex_pembelian, NULL);
+
+pthread_mutex_lock(&mutex_pembelian);  // Kunci sebelum akses shared data
+
+// Critical Section: akses dan modifikasi sisa_plush
+if (sisa_plush > 0) {
+    sisa_plush--;
+    // ...
+}
+
+pthread_mutex_unlock(&mutex_pembelian);  // Buka kunci
+
+```
 
 **Video Menjalankan Program**
 ...
