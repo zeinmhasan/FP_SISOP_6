@@ -17,7 +17,7 @@
 Nama | NRP
 --- | ---
 zein muhammad hasan | 5027241035
-... | 5027241xxx
+Erlinda Annisa Zahra | 5027241108
 ... | 5027241xxx
 Dimas Satya Andhika | 5027241032
 
