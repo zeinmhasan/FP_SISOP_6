@@ -18,7 +18,7 @@ Nama | NRP
 --- | ---
 zein muhammad hasan | 5027241035
 Erlinda Annisa Zahra | 5027241108
-... | 5027241xxx
+Andi Naufal Zaki | 5027241059
 Dimas Satya Andhika | 5027241032
 
 ## Deskripsi Soal : MUTEX/THREAD Dragon Plush™ Sale
